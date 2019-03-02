@@ -17,13 +17,13 @@ import { UiLoginModule } from '@workshop/ui-login';
   imports: [
     BrowserModule,
     NxModule.forRoot(),
-    AppRoutingModule,
+    HomeModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HomeModule,
     ProjectsModule,
     CustomersModule,
-    UiLoginModule
+    UiLoginModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
