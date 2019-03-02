@@ -16,7 +16,6 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     NxModule.forRoot(),
-    //RouterModule.forRoot([], { initialNavigation: 'enabled' }),
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
