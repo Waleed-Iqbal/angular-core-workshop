@@ -7,13 +7,7 @@ import { MaterialModule } from '@workshop/material';
 
 @NgModule({
   declarations: [ProjectsComponent],
-  imports: [
-    CommonModule,
-    ProjectsRoutingModule,
-    MaterialModule
-  ],
-  exports: [
-    ProjectsComponent
-  ]
+  imports: [CommonModule, ProjectsRoutingModule, MaterialModule],
+  exports: [ProjectsComponent]
 })
-export class ProjectsModule { }
+export class ProjectsModule {}
