@@ -6,7 +6,7 @@ const routes: Routes = [
   { path: '', loadChildren: './home/home.module#HomeModule' },
   {
     path: 'projects',
-    loadChildren: './projects/projects.module#ProjectModule'
+    loadChildren: './projects/projects.module#ProjectsModule'
   },
   {
     path: 'customers',
