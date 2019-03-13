@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjectsService } from 'libs/core-data/src/lib/projects/projects.service';
+import { ProjectsService, Project } from 'libs/core-data/src/index';
+
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
@@ -7,13 +8,16 @@ import { ProjectsService } from 'libs/core-data/src/lib/projects/projects.servic
 })
 export class ProjectsComponent implements OnInit {
   selectedProject;
-  projects;
+  projects: Project[];
 
   // doing dependency injection here (projectsService will automatically become a member of the class)
   constructor(private projectsService: ProjectsService) {
   }
 
-  ngOnInit() {}
+  // This is fired when all of the data/bindings of the component are satisfied
+  ngOnInit() {
+    this.getProjects();
+  }
 
   selectProject(project) {
     this.selectedProject = project;
