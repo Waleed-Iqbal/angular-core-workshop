@@ -1,43 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ProjectsService } from 'libs/core-data/src/lib/projects/projects.service';
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
-  projects = [
-    {
-      id: '1',
-      title: 'Project One',
-      details: 'This is a sample project',
-      percentComplete: 20,
-      approved: false
-    },
-    {
-      id: '2',
-      title: 'Project Two',
-      details: 'This is a sample project',
-      percentComplete: 40,
-      approved: false
-    },
-    {
-      id: '3',
-      title: 'Project Three',
-      details: 'This is a sample project',
-      percentComplete: 100,
-      approved: true
-    }
-  ];
-
   selectedProject;
+  projects;
 
-  constructor() {}
+  // doing dependency injection here (projectsService will automatically become a member of the class)
+  constructor(private projectsService: ProjectsService) {
+  }
 
   ngOnInit() {}
 
   selectProject(project) {
     this.selectedProject = project;
+  }
+
+  getProjects() {
+    this.projects = this.projectsService.all();
   }
 
   cancel() {
